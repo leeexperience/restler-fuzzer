@@ -1,0 +1,5 @@
+commit 6d984deedbc54aad957fa3da0c7e9e5df23a2aee (HEAD -> main, origin/main, origin/HEAD)
+Author: Konstantin Dunikov <43513955+KonstantIMP@users.noreply.github.com>
+Date:   Fri Feb 13 04:53:46 2026 +0300
+
+    Bump sqlmodel version to prevent demo_server run errors at new Python versions (#992)

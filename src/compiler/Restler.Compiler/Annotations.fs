@@ -249,6 +249,7 @@ let getAnnotationsFromOpenapiLinks (producerRequestId:RequestId) (links:IDiction
         | :? string as s ->
             match s.Split(".") with
             | [|"$request"; "path" | "query" | "header"; v|] -> v |> ResourceName |> Some
+            | [|"$request"; v|] when v.StartsWith("body#") -> v.Replace("body#","") |> pathOrName |> Some
             | [|"$response"; "header"; v|] -> v |> ResourceName |> Some
             | [|"$response"; v|] when v.StartsWith("body#") -> v.Replace("body#","") |> pathOrName |> Some
             | _ -> None
